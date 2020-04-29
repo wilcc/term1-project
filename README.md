@@ -12,3 +12,8 @@ By clicking the menu button on the top left corner a menu of suggested restauran
 By filling out the whole form and click the submit button, the reservation information will be displayed in a table on button, only the necessary information would be displayed, ie first name and last name would not be displayed since user know their own name and that information is strictly for restaurant to use.
 
 User can simply cancel their reservation by clicking the cancel reservation button.
+
+Tools used: 
+jquery
+Semantic UI
+https://semantic-ui.com/

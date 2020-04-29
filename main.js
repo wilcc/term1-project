@@ -103,6 +103,10 @@ function printAllRes(reservationList){
         printReservation(reservation)
     }
 }
+const updateBtn = document.querySelector('#updateBtn')
+updateBtn.addEventListener('click', function(tables){
+    alert('Updated')
+})
 let restName = document.querySelector('#resRest')
 const lupaFunc =function(){
     restName.value = 'Lupa'
@@ -141,11 +145,3 @@ const lastFunc =function(){
     restName.value = 'Last Stop'
 }
 
-
-const updateBtn = document.querySelector('#updateBtn')
-updateBtn.addEventListener('click', function(tables){
-    // for(const table of tables ){
-
-    // }
-    alert('Updated')
-})
