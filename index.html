@@ -27,6 +27,14 @@
             $('#italyMenu').click(function(){
                 $('#italianMenu').dropdown();
             })
+            $('table').on('click', 'button', function(e){
+            if(confirm('Do you want to cancel this reservation?')){
+            $(this).closest('tr').remove()
+            reservationList.splice(e,1)
+            }
+            })
+            $("#table td:contains('youSearchText')").html('YourTextToReplace');
+
             
 
             
@@ -220,7 +228,7 @@
                 </form>
                 </div>
                 <div class='row'>
-                    <table class="ui compact celled definition table">
+                    <table class="ui compact celled definition table" id='tbl'>
                         <thead class="full-width">
                             <tr>
                                 <th></th>
@@ -232,14 +240,14 @@
                             </tr>
                         </thead>
                         <tbody class='tbody'>
-                            <tr>
+                            <!-- <tr>
                                 <td>1100</td>
                                 <td>John Lilki</td>
                                 <td>September 14, 2013</td>
                                 <td>jhlilk22@yahoo.com</td>
                                 <td>2</td>
                                 <td>
-                                    <button class="ui button" id='1'>Cancel Reservation</button>
+                                    <button class="ui button canc" id='1'>Cancel Reservation</button>
                                 </td>
                             </tr>
                             <tr>
@@ -249,10 +257,12 @@
                                 <td>jhlilk22@yahoo.com</td>
                                 <td>5</td>
                                 <td>
-                                    <button class="ui button" id='2'>Cancel Reservation</button>
+                                    <button class="ui button canc" id='2'>Cancel Reservation</button>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
+                    </table>
+
                     </div>
                     </div>
                 </div>

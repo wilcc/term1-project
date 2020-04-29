@@ -20,7 +20,7 @@ resButton.addEventListener('click',function(){
         Time: timeVal,
         GuestNumber: guestVal,
         Restaurant: restVal,
-        id: reservation.length,
+        // id: reservation.length,
     }
     reservationList.push(reservation)
     printReservation(restVal,reservDate,timeVal,emailVal,guestVal)
@@ -41,7 +41,7 @@ const printReservation = function(name,date,time,email,number){
     let newButton = document.createElement('td')
     let createButton = document.createElement('button')
     createButton.innerText= 'Cancel Reservation'
-    createButton.classList= 'ui button'
+    createButton.classList= 'ui button canc'
 
 
     let tBody = document.querySelector('.tbody')
@@ -89,7 +89,7 @@ function openForm() {
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
-const tbody = docutment.querySelector('.tbody')
+const tbody = document.querySelector('.tbody')
 function clear(){
     while(tbody.hasChildNodes()){
         tbody.firstChild.remove()
@@ -100,3 +100,4 @@ function printAllRes(reservationList){
         printReservation(reservation)
     }
 }
+
