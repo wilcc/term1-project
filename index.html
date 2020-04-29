@@ -6,15 +6,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link href="./style.css" rel="stylesheet" type="text/css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
         <script type="text/javascript">
         $(document).ready(function() {
             $('.ui.sidebar')
             .sidebar({
                 context: $('.bottom.segment')
             })
-            .sidebar('attach events', '.menu')
+            .sidebar('attach events', '#menuButton')
             ;
+            $('.link.example .dropdown')
+            .dropdown({
+                action: 'hide'
+            })
+            ;
+            $('#italyMenu').click(function(){
+                $('#italianMenu').dropdown();
+            })
+            
+
+            
+            
         });
         
         </script>
@@ -22,8 +38,9 @@
     <body>
         <div class="ui top menu">
             <a class="item">
-                <i class="sidebar icon"></i>
-                Menu
+                <div class="ui button" id='menuButton'>Menu
+                    <i class="sidebar icon"></i>
+                </div>
             </a>
             <div class='ui right menu'>
                 <div class="item">
@@ -34,40 +51,59 @@
                 </div>
             </div>
         </div>
+        
         <div class="ui bottom attached segment pushable">
-            <div class="ui visible sidebar inverted vertical menu ">
+            <div class="ui sidebar inverted vertical menu ">
                 <div class='ui dropdown item'>
-                    <i class="star icon"></i>
-                    Italian
-                    <div class='menu'>
-                        <div class='item'>
+                    <i class="star icon" ></i>
+                    <button class = 'ui button' onclick="myTest()">Italian</button>
+                    <div id='italy' style="display:none">
                         <img class='ui small circular image' src='./img/italian/o (1).jpg'>
-                        </div> 
+                        <label>Lupa</label>
                         <img class='ui small circular image' src='./img/italian/o (2).jpg'>
+                        <label>Forno Russo</label>
                         <img class='ui small circular image' src='./img/italian/o (3).jpg'>
+                        <label>Almar</label>
                         <img class='ui small circular image' src='./img/italian/o.jpg'>
+                        <label>Pulia Ristornte</label>
                     </div>
                 </div>
-                <a class="item">
-                    <i class="star outline icon"></i>
-                    Chinese
-                    <div>
+                <div class='ui dropdown item'>
+                    <i class="star outline icon" ></i>
+                    <button class = 'ui button' onclick="myTest1()">Chinese</button>
+                    <div id='china' style="display:none">
+                        
                         <img class='ui small circular image' src='./img/chinese/o (1).jpg'>
+                        <label>SingLong</label>
+
+
                         <img class='ui small circular image' src='./img/chinese/o (2).jpg'>
+                        <label>HongKong Stop</label>
+
+
                         <img class='ui small circular image' src='./img/chinese/o (4).jpg'>
+                        <label>Jade</label>
+
+
                         <img class='ui small circular image' src='./img/chinese/o.jpg'>
+                        <label>Mama Chen's Kitchen</label>
+
                     </div>
-                </a>
-                <a class="item">
-                    <i class="star icon"></i>
-                    American
-                    <div>
+                    </div>
+                    <div class='ui dropdown item'>
+                        <i class="star icon" ></i>
+                        <button class = 'ui button' onclick="myTest2()">American</button>
+                        <div id='USA' style="display:none">
                         <img class='ui small circular image' src='./img/american/o.jpg'>
+                        <label>The Smith</label>
                         <img class='ui small circular image' src='./img/american/o (3).jpg'>
+                        <label>Zanmi</label>
                         <img class='ui small circular image' src='./img/american/3.jpg'>
+                        <label>Little Ways</label>
                         <img class='ui small circular image' src='./img/american/4.jpg'>
+                        <label>Last Stop</label>
                     </div>
-                </a>
+                </div>
             </div>
             <div class="pusher">
                 <div class="ui basic segment">
@@ -77,223 +113,147 @@
                         <div class="field">
                         <div class="two fields">
                             <div class="field">
-                                <input type="text" name="shipping[first-name]" placeholder="First Name">
+                                <input type="text" name="first-name" id='resFirstName' placeholder="First Name">
                             </div>
                             <div class="field">
-                                <input type="text" name="shipping[last-name]" placeholder="Last Name">
+                                <input type="text" name="last-name" id='resLastName' placeholder="Last Name">
                             </div>
                         </div>
                     </div>
-                    <div class="two fields">
-                        <div class="field">
-                            <label>State</label>
-                            <select class="ui fluid dropdown">
-                                <option value="">State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="WY">Wyoming</option>
+                    <label>Email</label>
+                    <div class="field">
+                        <input type='email' name='email' id='resEmail' placeholder="Enter Email Address">
+                    </div>
+                    <div class="four fields">
+                            <div class="field">
+                            <label>Date</label>
+                            <select class="ui fluid dropdown" id='apptDate'>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
                             </select>
-                        </div>
-                        <div class="field">
-                            <label>Country</label>
-                            <div class="ui fluid search selection dropdown">
-                                <input type="hidden" name="country">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Select Country</div>
-                                <div class="menu">
-                                    <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
-                                    
-                                    <div class="item" data-value="zw"><i class="zw flag"></i>Zimbabwe</div>
-                                </div>
                             </div>
-                        </div>
+                            <div class="field">
+                                <label>Month</label>
+                                <select class="ui fluid dropdown" id='apptMonth'>
+                                    <option value="January">January</option>
+                                    <option value="Febuary">Febuary</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Time</label>
+                                <select class="ui fluid dropdown" id='apptTime'>
+                                    <option value="1100">1100</option>
+                                    <option value="1130">1130</option>
+                                    <option value="1200">1200</option>
+                                    <option value="1230">1230</option>
+                                    <option value="1300">1300</option>
+                                    <option value="1330">1330</option>
+                                    <option value="1400">1400</option>
+                                    <option value="1430">1430</option>
+                                    <option value="1500">1500</option>
+                                    <option value="1530">1530</option>
+                                    <option value="1600">1600</option>
+                                    <option value="1630">1630</option>
+                                    <option value="1700">1700</option>
+                                    <option value="1730">1730</option>
+                                    <option value="1800">1800</option>
+                                    <option value="1830">1830</option>
+                                    <option value="1900">1900</option>
+                                    <option value="1930">1930</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2100">2100</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label>Number of Guest</label>
+                                <input type="number" name='guest' id='resGuest' placeholder="Enter Number of Guest">
+                            </div>
                     </div>
                     <h4 class="ui dividing header">Restaurant Information</h4>
                     <div class="field">
-                        <label>Card Type</label>
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="card[type]">
-                            <div class="default text">Type</div>
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <div class="item" data-value="visa">
-                                    <i class="visa icon"></i>
-                                    Visa
-                                </div>
-                                <div class="item" data-value="amex">
-                                    <i class="amex icon"></i>
-                                    American Express
-                                </div>
-                                <div class="item" data-value="discover">
-                                    <i class="discover icon"></i>
-                                    Discover
-                                </div>
-                            </div>
-                        </div>
+                        <label>Restaurant</label>
+                        <input type="text" name='restaurant' id = 'resRest' placeholder='Restaurant Name'>
                     </div>
                     <div class="fields">
-                        <div class="seven wide field">
-                            <label>Card Number</label>
-                            <input type="text" name="card[number]" maxlength="16" placeholder="Card #">
-                        </div>
-                        <div class="three wide field">
-                            <label>CVC</label>
-                            <input type="text" name="card[cvc]" maxlength="3" placeholder="CVC">
-                        </div>
-                        <div class="six wide field">
-                            <label>Expiration</label>
-                            <div class="two fields">
-                                <div class="field">
-                                    <select class="ui fluid search dropdown" name="card[expire-month]">
-                                        <option value="">Month</option>
-                                        <option value="1">January</option>
-                                        <option value="2">February</option>
-                                        <option value="3">March</option>
-                                        <option value="4">April</option>
-                                        <option value="5">May</option>
-                                        <option value="6">June</option>
-                                        <option value="7">July</option>
-                                        <option value="8">August</option>
-                                        <option value="9">September</option>
-                                        <option value="10">October</option>
-                                        <option value="11">November</option>
-                                        <option value="12">December</option>
-                                    </select>
-                                </div>
-                                <div class="field">
-                                    <input type="text" name="card[expire-year]" maxlength="4" placeholder="Year">
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <h4 class="ui dividing header">Receipt</h4>
-                    <div class="field">
-                        <label>Send Receipt To:</label>
-                        <div class="ui fluid multiple search selection dropdown">
-                            <input type="hidden" name="receipt">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Saved Contacts</div>
-                            <div class="menu">
-                                <div class="item" data-value="jenny" data-text="Jenny">
-                                    <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg">
-                                    Jenny Hess
-                                </div>
-                                <div class="item" data-value="elliot" data-text="Elliot">
-                                    <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg">
-                                    Elliot Fu
-                                </div>
-                                <div class="item" data-value="stevie" data-text="Stevie">
-                                    <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg">
-                                    Stevie Feliciano
-                                </div>
-                                <div class="item" data-value="christian" data-text="Christian">
-                                    <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg">
-                                    Christian
-                                </div>
-                                <div class="item" data-value="matt" data-text="Matt">
-                                    <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg">
-                                    Matt
-                                </div>
-                                <div class="item" data-value="justen" data-text="Justen">
-                                    <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg">
-                                    Justen Kitsune
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui segment">
-                        <div class="field">
-                            <div class="ui toggle checkbox">
-                                <input type="checkbox" name="gift" tabindex="0" class="hidden">
-                                <label>Do not include a receipt in the package</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui button" tabindex="0">Submit Order</div>
+                    <div class="ui button" id = 'resButton' tabindex="0">Make Reservation</div>
                 </form>
-                <!-- <table class="ui compact celled definition table">
-                    <thead class="full-width">
-                        <tr>
-                            <th>Time</th>
-                            <th>Name</th>
-                            <th>Reservation Date</th>
-                            <th>E-mail address</th>
-                            <th>Number Of Guest</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="collapsing">
-                                <div class="ui selection dropdown">
-                                    <input type="hidden" name="gender">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text">Gender</div>
-                                    <div class="menu">
-                                        <div class="item" data-value="1">Male</div>
-                                        <div class="item" data-value="0">Female</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>John Lilki</td>
-                            <td>September 14, 2013</td>
-                            <td>jhlilk22@yahoo.com</td>
-                            <td>No</td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="full-width">
-                        <tr>
-                            <th></th>
-                            <th colspan="4">
-                                    <div class="ui right floated small primary labeled icon button">
-                                        <i class="user icon"></i> Add User
-                                    </div>
-                                    <div class="ui small  button">
-                                        Approve
-                                    </div>
-                                    <div class="ui small  disabled button">
-                                        Approve All
-                                    </div>
-                                </th>
-                            </tr>
-                        </tfoot>
-                    </table> -->
                 </div>
                 <div class='row'>
                     <table class="ui compact celled definition table">
                         <thead class="full-width">
                             <tr>
                                 <th></th>
-                                <th>Name</th>
+                                <th>Restaurant  Name</th>
                                 <th>Appointment Date</th>
                                 <th>E-mail address</th>
                                 <th>Number Of Guest</th>
-                                <th>Rating</th>
+                                <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class='tbody'>
                             <tr>
-                                <td class="collapsing">
-                                    <div class="ui fitted slider checkbox">
-                                        <input type="checkbox"> <label></label>
-                                    </div>
-                                </td>
+                                <td>1100</td>
                                 <td>John Lilki</td>
                                 <td>September 14, 2013</td>
                                 <td>jhlilk22@yahoo.com</td>
-                                <td>No</td>
-                                <td>****</td>
+                                <td>2</td>
+                                <td>
+                                    <button class="ui button" id='1'>Cancel Reservation</button>
+                                </td>
                             </tr>
                             <tr>
-                                <td class="collapsing">
-                                    <div class="ui fitted slider checkbox">
-                                        <input type="checkbox"> <label></label>
-                                    </div>
+                                <td>1100</td>
+                                <td>John Lilki</td>
+                                <td>September 14, 2013</td>
+                                <td>jhlilk22@yahoo.com</td>
+                                <td>5</td>
+                                <td>
+                                    <button class="ui button" id='2'>Cancel Reservation</button>
                                 </td>
-                                <td>Jamie Harington</td>
-                                <td>January 11, 2014</td>
-                                <td>jamieharingonton@yahoo.com</td>
-                                <td>Yes</td>
                             </tr>
-                        </div>
+                        </tbody>
+                    </div>
                     </div>
                 </div>
     </body>
