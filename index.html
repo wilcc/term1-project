@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Project For Code Immersives</title>
+        <title>Limit Reservation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link href="./style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js"
-            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-            crossorigin="anonymous"></script>
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> -->
         <script type="text/javascript">
         $(document).ready(function() {
@@ -66,13 +66,13 @@
                     <i class="star icon" ></i>
                     <button class = 'ui button' onclick="myTest()">Italian</button>
                     <div id='italy' style="display:none">
-                        <img class='ui small circular image' src='./img/italian/o (1).jpg'>
-                        <label>Lupa</label>
-                        <img class='ui small circular image' src='./img/italian/o (2).jpg'>
+                        <img class='ui small circular image' onclick="lupaFunc()" src='./img/italian/o (1).jpg'>
+                        <label >Lupa</label>
+                        <img class='ui small circular image' onclick="fornoFunc()"src='./img/italian/o (2).jpg'>
                         <label>Forno Russo</label>
-                        <img class='ui small circular image' src='./img/italian/o (3).jpg'>
+                        <img class='ui small circular image' onclick="almarFunc()"src='./img/italian/o (3).jpg'>
                         <label>Almar</label>
-                        <img class='ui small circular image' src='./img/italian/o.jpg'>
+                        <img class='ui small circular image' onclick="puliaFunc()"src='./img/italian/o.jpg'>
                         <label>Pulia Ristornte</label>
                     </div>
                 </div>
@@ -81,19 +81,19 @@
                     <button class = 'ui button' onclick="myTest1()">Chinese</button>
                     <div id='china' style="display:none">
                         
-                        <img class='ui small circular image' src='./img/chinese/o (1).jpg'>
+                        <img class='ui small circular image' onclick="singFunc()"src='./img/chinese/o (1).jpg'>
                         <label>SingLong</label>
 
 
-                        <img class='ui small circular image' src='./img/chinese/o (2).jpg'>
+                        <img class='ui small circular image' onclick="hongkongFunc()"src='./img/chinese/o (2).jpg'>
                         <label>HongKong Stop</label>
 
 
-                        <img class='ui small circular image' src='./img/chinese/o (4).jpg'>
+                        <img class='ui small circular image' onclick="jadeFunc()"src='./img/chinese/o (4).jpg'>
                         <label>Jade</label>
 
 
-                        <img class='ui small circular image' src='./img/chinese/o.jpg'>
+                        <img class='ui small circular image' onclick="mamaFunc()"src='./img/chinese/o.jpg'>
                         <label>Mama Chen's Kitchen</label>
 
                     </div>
@@ -102,13 +102,13 @@
                         <i class="star icon" ></i>
                         <button class = 'ui button' onclick="myTest2()">American</button>
                         <div id='USA' style="display:none">
-                        <img class='ui small circular image' src='./img/american/o.jpg'>
+                        <img class='ui small circular image' onclick="smithFunc()" src='./img/american/o.jpg'>
                         <label>The Smith</label>
-                        <img class='ui small circular image' src='./img/american/o (3).jpg'>
+                        <img class='ui small circular image' onclick="zanmiFunc()"src='./img/american/o (3).jpg'>
                         <label>Zanmi</label>
-                        <img class='ui small circular image' src='./img/american/3.jpg'>
+                        <img class='ui small circular image' onclick="littleFunc()"src='./img/american/3.jpg'>
                         <label>Little Ways</label>
-                        <img class='ui small circular image' src='./img/american/4.jpg'>
+                        <img class='ui small circular image' onclick="lastFunc()"src='./img/american/4.jpg'>
                         <label>Last Stop</label>
                     </div>
                 </div>
@@ -241,8 +241,9 @@
                         </thead>
                         <tbody class='tbody'>
                             <!-- <tr>
-                                <td>1100</td>
-                                <td>John Lilki</td>
+                                <td>
+                                    <div contenteditable>1100</div></td>
+                                <td contenteditable>John Lilki</td>
                                 <td>September 14, 2013</td>
                                 <td>jhlilk22@yahoo.com</td>
                                 <td>2</td>
@@ -262,7 +263,7 @@
                             </tr> -->
                         </tbody>
                     </table>
-
+                    <button class='ui primary button' id='updateBtn'>Update</button>
                     </div>
                     </div>
                 </div>

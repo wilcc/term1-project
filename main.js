@@ -32,12 +32,15 @@ const printReservation = function(name,date,time,email,number){
     newName.innerText = name
     let newDate = document.createElement('td')
     newDate.innerText = date
+    newDate.setAttribute('contenteditable',true)
     let newTime = document.createElement('td')
     newTime.innerText = time
+    newTime.setAttribute('contenteditable',true)
     let newEmail = document.createElement('td')
     newEmail.innerText = email
     let newGuestNumber = document.createElement('td')
     newGuestNumber.innerText = number
+    newGuestNumber.setAttribute('contenteditable',true)
     let newButton = document.createElement('td')
     let createButton = document.createElement('button')
     createButton.innerText= 'Cancel Reservation'
@@ -85,10 +88,10 @@ function myTest2() {
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
-
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
+
 const tbody = document.querySelector('.tbody')
 function clear(){
     while(tbody.hasChildNodes()){
@@ -100,4 +103,49 @@ function printAllRes(reservationList){
         printReservation(reservation)
     }
 }
+let restName = document.querySelector('#resRest')
+const lupaFunc =function(){
+    restName.value = 'Lupa'
+}
+const fornoFunc =function(){
+    restName.value = 'Forno Russo'
+}
+const almarFunc =function(){
+    restName.value = 'Almar'
+}
+const puliaFunc =function(){
+    restName.value = 'Pulia Ristornte'
+}
+const singFunc =function(){
+    restName.value = 'SingLong'
+}
+const hongkongFunc =function(){
+    restName.value = 'HongKong Stop'
+}
+const jadeFunc =function(){
+    restName.value = 'Jade'
+}
+const mamaFunc =function(){
+    restName.value = "Mama Chen's Kitchen"
+}
+const smithFunc =function(){
+    restName.value = 'The Smith'
+}
+const zanmiFunc =function(){
+    restName.value = 'Zanmi'
+}
+const littleFunc =function(){
+    restName.value = 'Little Ways'
+}
+const lastFunc =function(){
+    restName.value = 'Last Stop'
+}
 
+
+const updateBtn = document.querySelector('#updateBtn')
+updateBtn.addEventListener('click', function(tables){
+    // for(const table of tables ){
+
+    // }
+    alert('Updated')
+})
